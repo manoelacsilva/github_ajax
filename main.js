@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .then(function(json) {
         nameElement.innerText = json.name;
-        usernameElement.innerText = json.login;
+        usernameElement.innerText = '@' + json.login;
         avatarElement.src = json.avatar_url;
         followersElement.innerText = json.followers;
         followingElement.innerText = json.following;
