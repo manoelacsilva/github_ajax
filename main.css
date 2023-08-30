@@ -1,0 +1,147 @@
+:root {
+    --header-color: #e12d6c;
+    --bg-color: #67c1da;
+}
+
+* {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+}
+
+body {
+    background-color: var(--bg-color);;
+}
+
+.container {
+    max-width: 640px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+max-width: 100%;
+    background-image: url(fundo3.png);
+
+    text-align: center;
+    height: 30vh;
+    position: relative;
+}
+
+header .container {
+    position: relative;
+    bottom: -50%;
+}
+
+.profile-avatar {
+    border-radius: 50%;
+    margin-bottom: 24px;
+    width: 180px;
+    height: 180px;
+}
+
+.profile-name {
+    font-size: 2em;
+    background: linear-gradient(to right, red, blue);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.profile-username {
+    margin: 16px 0 32px;
+    font-size: 1.1em;
+}
+
+.profile-link {
+    background-color: var(--header-color);
+    color: #000;
+    font-weight: bold;
+    border-radius: 7px;
+    padding: 8px 16px;
+    display: inline-block;
+    margin-top: 24px;
+    text-decoration: none;
+}
+
+.profile-link:hover {
+    background-color: #f14582
+}
+
+.numbers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.numbers-item {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.numbers-item h4 {
+    font-size: .3em;
+}
+
+.projeto-galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    padding: 0 22px;
+    margin-top: 350px;
+    justify-content: center;
+    padding-bottom: 24px;
+}
+
+.projeto-container {
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+.projeto-container:hover {
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+.projeto-window {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: cover;
+    object-position: center;
+}
+
+.projeto-container .projeto-window::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.projeto-container:hover .projeto-window::before {
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .projeto-galleria {
+    grid-template-columns: repeat(2, 1fr);
+    padding-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .projeto-galeria {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+    padding-bottom: 20px;
+    }
+}
